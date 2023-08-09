@@ -6,10 +6,10 @@ import BookCard from "./BookCard";
 
 function ShowBookList() {
   const [books, setBooks] = useState([]);
-
+  const backEnd = "https://cise-w3-server.vercel.app/";
   useEffect(() => {
     axios
-      .get("http://localhost:8082/")
+      .get(backEnd)
       .then((res) => {
         setBooks(res.data);
       })

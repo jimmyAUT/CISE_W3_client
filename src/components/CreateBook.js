@@ -22,9 +22,10 @@ const CreateBook = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    const backEnd = "https://cise-w3-server.vercel.app/";
 
     axios
-      .post("http://localhost:8082/", book)
+      .post(backEnd, book)
       .then((res) => {
         setBook({
           title: "",

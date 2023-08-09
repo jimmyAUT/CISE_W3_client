@@ -8,10 +8,10 @@ function ShowBookDetails(props) {
 
   const { id } = useParams();
   const navigate = useNavigate();
-
+  // const backEnd = "https://cise-w3-server.vercel.app/";
   useEffect(() => {
     axios
-      .get(`http://localhost:8082/${id}`)
+      .get(`https://cise-w3-server.vercel.app/${id}`)
       .then((res) => {
         setBook(res.data);
       })
@@ -22,7 +22,7 @@ function ShowBookDetails(props) {
 
   const onDeleteClick = (id) => {
     axios
-      .delete(`http://localhost:8082/${id}`)
+      .delete(`https://cise-w3-server.vercel.app/${id}`)
       .then((res) => {
         navigate("/");
       })
