@@ -19,7 +19,7 @@ function UpdateBookInfo(props) {
 
   useEffect(() => {
     axios
-      .get(backEnd + id)
+      .get(`https://cise-w3-server.vercel.app/${id}`)
       .then((res) => {
         setBook({
           title: res.data.title,
@@ -31,7 +31,7 @@ function UpdateBookInfo(props) {
         });
       })
       .catch((err) => {
-        console.log("Error from UpdateBookInfo");
+        console.log(err);
       });
   }, [id]);
 
@@ -52,12 +52,12 @@ function UpdateBookInfo(props) {
     };
 
     axios
-      .put(backEnd + id, data)
+      .put(`https://cise-w3-server.vercel.app/${id}`, data)
       .then((res) => {
         navigate(`/show-book/${id}`);
       })
       .catch((err) => {
-        console.log("Error in UpdateBookInfo!");
+        console.log(err);
       });
   };
 

@@ -25,7 +25,7 @@ const CreateBook = (props) => {
     const backEnd = "https://cise-w3-server.vercel.app/";
 
     axios
-      .post(backEnd, book)
+      .post("https://cise-w3-server.vercel.app/", book)
       .then((res) => {
         setBook({
           title: "",
@@ -40,7 +40,7 @@ const CreateBook = (props) => {
         navigate("/");
       })
       .catch((err) => {
-        console.log("Error in CreateBook!");
+        console.log("err");
       });
   };
 
